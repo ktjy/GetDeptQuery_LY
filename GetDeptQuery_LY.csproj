@@ -1,0 +1,330 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B718FE42-6102-439D-967D-2DF1927AFF8E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GetDeptQuery_LY</RootNamespace>
+    <AssemblyName>GetDeptQuery_LY</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44355</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Pnb50NetClient, Version=3.1.1.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Pnb50NetClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="YQHelperInterface, Version=3.8.2.919, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\YQHelperInterface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Pnb50NetClient.dll" />
+    <Content Include="bin\YQHelperInterface.dll" />
+    <Content Include="Web.config" />
+    <Content Include="WebService.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action\HisAction.cs" />
+    <Compile Include="Action\RegisterAction.cs" />
+    <Compile Include="Entity\CardSign\HIS\ReponseCardNo.cs" />
+    <Compile Include="Entity\CardSign\HIS\ReponsePrePay.cs" />
+    <Compile Include="Entity\CardSign\HIS\RequestRegMark.cs" />
+    <Compile Include="Entity\CardSign\YQ\data.cs" />
+    <Compile Include="Entity\CardSign\YQ\request.cs" />
+    <Compile Include="Entity\CardSign\YQ\response.cs" />
+    <Compile Include="Entity\CardSign\YQ\returnresult.cs" />
+    <Compile Include="Entity\ChargeCancle\His\ResultInfo.cs" />
+    <Compile Include="Entity\ChargeRecordQuery\HIS\PrePayRecordList.cs" />
+    <Compile Include="Entity\ChargeRecordQuery\HIS\ReponseAddBalanceRecord.cs" />
+    <Compile Include="Entity\ChargeRecordQuery\HIS\RequestCardNo.cs" />
+    <Compile Include="Entity\ChargeRecordQuery\YQ\data_row.cs" />
+    <Compile Include="Entity\ChargeRecordQuery\YQ\request.cs" />
+    <Compile Include="Entity\ChargeRecordQuery\YQ\response.cs" />
+    <Compile Include="Entity\ChargeRecordQuery\YQ\returnresult.cs" />
+    <Compile Include="Entity\Charge\HIS\ReponsePrePay.cs" />
+    <Compile Include="Entity\Charge\HIS\RequestPrePay.cs" />
+    <Compile Include="Entity\Charge\YQ\data.cs" />
+    <Compile Include="Entity\Charge\YQ\request.cs" />
+    <Compile Include="Entity\Charge\YQ\response.cs" />
+    <Compile Include="Entity\Charge\YQ\returnresult.cs" />
+    <Compile Include="Entity\CheckCardSign\HIS\ReponseCardNo.cs" />
+    <Compile Include="Entity\CheckCardSign\HIS\RequestIDNo.cs" />
+    <Compile Include="Entity\CheckCardSign\HIS\ResultInfo.cs" />
+    <Compile Include="Entity\CheckCardSign\YQ\data.cs" />
+    <Compile Include="Entity\CheckCardSign\YQ\request.cs" />
+    <Compile Include="Entity\CheckCardSign\YQ\response.cs" />
+    <Compile Include="Entity\CheckCardSign\YQ\returnresult.cs" />
+    <Compile Include="Entity\DZInfo\HIS\DataRow.cs" />
+    <Compile Include="Entity\DZInfo\HIS\DataSet.cs" />
+    <Compile Include="Entity\DZInfo\HIS\ReponseData.cs" />
+    <Compile Include="Entity\DZInfo\HIS\RequestReconciliation.cs" />
+    <Compile Include="Entity\DZInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\DZInfo\YQ\request.cs" />
+    <Compile Include="Entity\DZInfo\YQ\response.cs" />
+    <Compile Include="Entity\DZInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\GetDBServerTime\HIS\ResultInfo.cs" />
+    <Compile Include="Entity\GetDBServerTime\YQ\data.cs" />
+    <Compile Include="Entity\GetDBServerTime\YQ\response.cs" />
+    <Compile Include="Entity\GetDBServerTime\YQ\returnresult.cs" />
+    <Compile Include="Entity\GetPatientInfo\HIS\AccountPatientInfo.cs" />
+    <Compile Include="Entity\GetPatientInfo\HIS\ReponsePatientInfo.cs" />
+    <Compile Include="Entity\GetPatientInfo\HIS\RequestCardNo.cs" />
+    <Compile Include="Entity\GetPatientInfo\YQ\data.cs" />
+    <Compile Include="Entity\GetPatientInfo\YQ\request.cs" />
+    <Compile Include="Entity\GetPatientInfo\YQ\response.cs" />
+    <Compile Include="Entity\GetPatientInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\InHosChargeInfo\HIS\RequestPrePay.cs" />
+    <Compile Include="Entity\InHosChargeInfo\HIS\ResultInfo.cs" />
+    <Compile Include="Entity\InHosChargeInfo\YQ\data.cs" />
+    <Compile Include="Entity\InHosChargeInfo\YQ\request.cs" />
+    <Compile Include="Entity\InHosChargeInfo\YQ\response.cs" />
+    <Compile Include="Entity\InHosChargeInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\InHosChargeRecordQueryInfo\HIS\PrePayRecordList.cs" />
+    <Compile Include="Entity\InHosChargeRecordQueryInfo\HIS\ReponseAddBalanceRecord.cs" />
+    <Compile Include="Entity\InHosChargeRecordQueryInfo\HIS\RequestCardNo.cs" />
+    <Compile Include="Entity\InHosChargeRecordQueryInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\InHosChargeRecordQueryInfo\YQ\request.cs" />
+    <Compile Include="Entity\InHosChargeRecordQueryInfo\YQ\response.cs" />
+    <Compile Include="Entity\InHosChargeRecordQueryInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\InHosGetInHosNo\HIS\ReponseInpatientInfo.cs" />
+    <Compile Include="Entity\InHosGetInHosNo\HIS\RequestCardNo.cs" />
+    <Compile Include="Entity\InHosGetPatientInfo\HIS\ReponseInpatientInfo.cs" />
+    <Compile Include="Entity\InHosGetPatientInfo\HIS\RequestCardNo.cs" />
+    <Compile Include="Entity\InHosGetPatientInfo\YQ\data.cs" />
+    <Compile Include="Entity\InHosGetPatientInfo\YQ\request.cs" />
+    <Compile Include="Entity\InHosGetPatientInfo\YQ\response.cs" />
+    <Compile Include="Entity\InHosGetPatientInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\InHospitalGetDetailInfo\HIS\FeeDetailList.cs" />
+    <Compile Include="Entity\InHospitalGetDetailInfo\HIS\ReponseFeeDetailRecord.cs" />
+    <Compile Include="Entity\InHospitalGetDetailInfo\HIS\RequestCardNoDate.cs" />
+    <Compile Include="Entity\InHospitalGetDetailInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\InHospitalGetDetailInfo\YQ\request.cs" />
+    <Compile Include="Entity\InHospitalGetDetailInfo\YQ\response.cs" />
+    <Compile Include="Entity\InHospitalGetDetailInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\InHospitalGetMasterInfo\HIS\FeeDetailList.cs" />
+    <Compile Include="Entity\InHospitalGetMasterInfo\HIS\ReponseFeeList.cs" />
+    <Compile Include="Entity\InHospitalGetMasterInfo\HIS\RequestCardNoDate.cs" />
+    <Compile Include="Entity\InHospitalGetMasterInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\InHospitalGetMasterInfo\YQ\request.cs" />
+    <Compile Include="Entity\InHospitalGetMasterInfo\YQ\response.cs" />
+    <Compile Include="Entity\InHospitalGetMasterInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\MedCardCheck\HIS\RequestCardNoID.cs" />
+    <Compile Include="Entity\MedCardCheck\HIS\RequestIDNo.cs" />
+    <Compile Include="Entity\MedCardCheck\HIS\ResultInfo.cs" />
+    <Compile Include="Entity\MedCardCheck\YQ\request.cs" />
+    <Compile Include="Entity\MedCardCheck\YQ\response.cs" />
+    <Compile Include="Entity\MedCardCheck\YQ\returnresult.cs" />
+    <Compile Include="Entity\OutpBillsDetailQueryInfo\HIS\CostDetailList.cs" />
+    <Compile Include="Entity\OutpBillsDetailQueryInfo\HIS\ReponseCostDetail.cs" />
+    <Compile Include="Entity\OutpBillsDetailQueryInfo\HIS\RequestCostDetail.cs" />
+    <Compile Include="Entity\OutpBillsDetailQueryInfo\HIS\YBCostCode.cs" />
+    <Compile Include="Entity\OutpBillsDetailQueryInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\OutpBillsDetailQueryInfo\YQ\request.cs" />
+    <Compile Include="Entity\OutpBillsDetailQueryInfo\YQ\response.cs" />
+    <Compile Include="Entity\OutpBillsDetailQueryInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\OutpBillsPayedConfirmInfo\HIS\ReponsePrePay.cs" />
+    <Compile Include="Entity\OutpBillsPayedConfirmInfo\HIS\ReponseWinNo.cs" />
+    <Compile Include="Entity\OutpBillsPayedConfirmInfo\HIS\RequestPay.cs" />
+    <Compile Include="Entity\OutpBillsPayedConfirmInfo\HIS\RequestRecipeNo.cs" />
+    <Compile Include="Entity\RegisterConfirmInfo\HIS\YBOutMsg.cs" />
+    <Compile Include="Entity\OutpBillsPayedConfirmInfo\YQ\data.cs" />
+    <Compile Include="Entity\OutpBillsPayedConfirmInfo\YQ\request.cs" />
+    <Compile Include="Entity\OutpBillsPayedConfirmInfo\YQ\response.cs" />
+    <Compile Include="Entity\OutpBillsPayedConfirmInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\OutpBillstoPayQueryInfo\HIS\Register.cs" />
+    <Compile Include="Entity\OutpBillstoPayQueryInfo\HIS\ReponseFeeReg.cs" />
+    <Compile Include="Entity\OutpBillstoPayQueryInfo\HIS\RequestFeeReg.cs" />
+    <Compile Include="Entity\OutpBillstoPayQueryInfo\HIS\YBInMsg.cs" />
+    <Compile Include="Entity\OutpBillstoPayQueryInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\OutpBillstoPayQueryInfo\YQ\request.cs" />
+    <Compile Include="Entity\OutpBillstoPayQueryInfo\YQ\response.cs" />
+    <Compile Include="Entity\OutpBillstoPayQueryInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\OutpFeeDetailQuery\HIS\PrePayRecordList.cs" />
+    <Compile Include="Entity\OutpFeeDetailQuery\HIS\ReponseAddBalanceRecord.cs" />
+    <Compile Include="Entity\OutpFeeDetailQuery\HIS\RequestCardNo.cs" />
+    <Compile Include="Entity\OutpFeeDetailQuery\YQ\data_row.cs" />
+    <Compile Include="Entity\OutpFeeDetailQuery\YQ\request.cs" />
+    <Compile Include="Entity\OutpFeeDetailQuery\YQ\response.cs" />
+    <Compile Include="Entity\OutpFeeDetailQuery\YQ\returnresult.cs" />
+    <Compile Include="Entity\OutpFeeMasterQuery\HIS\FeeDetailList.cs" />
+    <Compile Include="Entity\OutpFeeMasterQuery\HIS\ReponseFeeDetailRecord.cs" />
+    <Compile Include="Entity\OutpFeeMasterQuery\HIS\RequestCardNoDate.cs" />
+    <Compile Include="Entity\OutpFeeMasterQuery\YQ\data_row.cs" />
+    <Compile Include="Entity\OutpFeeMasterQuery\YQ\request.cs" />
+    <Compile Include="Entity\OutpFeeMasterQuery\YQ\response.cs" />
+    <Compile Include="Entity\OutpFeeMasterQuery\YQ\returnresult.cs" />
+    <Compile Include="Entity\OutpRegisterListQueryInfo\HIS\Register.cs" />
+    <Compile Include="Entity\OutpRegisterListQueryInfo\HIS\ReponseFeeReg.cs" />
+    <Compile Include="Entity\OutpRegisterListQueryInfo\HIS\RequestFeeReg.cs" />
+    <Compile Include="Entity\OutpRegisterListQueryInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\OutpRegisterListQueryInfo\YQ\request.cs" />
+    <Compile Include="Entity\OutpRegisterListQueryInfo\YQ\response.cs" />
+    <Compile Include="Entity\OutpRegisterListQueryInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\PriceInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\PriceInfo\YQ\request.cs" />
+    <Compile Include="Entity\PriceInfo\YQ\response.cs" />
+    <Compile Include="Entity\PriceInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\RegisterConfirmInfo\HIS\ReponseReg.cs" />
+    <Compile Include="Entity\RegisterConfirmInfo\HIS\RequestReg.cs" />
+    <Compile Include="Entity\RegisterConfirmInfo\YQ\data.cs" />
+    <Compile Include="Entity\RegisterConfirmInfo\YQ\request.cs" />
+    <Compile Include="Entity\RegisterConfirmInfo\YQ\response.cs" />
+    <Compile Include="Entity\RegisterConfirmInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\RegisterDeptInfo\HIS\DeptList.cs" />
+    <Compile Include="Entity\RegisterDeptInfo\HIS\ReponseRegDept.cs" />
+    <Compile Include="Entity\RegisterDeptInfo\HIS\RequestRegDept.cs" />
+    <Compile Include="Entity\RegisterDeptInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\RegisterDeptInfo\YQ\request.cs" />
+    <Compile Include="Entity\RegisterDeptInfo\YQ\response.cs" />
+    <Compile Include="Entity\RegisterDeptInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\RegisterDoctorInfo\HIS\Doctor.cs" />
+    <Compile Include="Entity\RegisterDoctorInfo\HIS\ReponseRegDoct.cs" />
+    <Compile Include="Entity\RegisterDoctorInfo\HIS\RequestRegDoct.cs" />
+    <Compile Include="Entity\RegisterDoctorInfo\HIS\YBTranMsg.cs" />
+    <Compile Include="Entity\RegisterDoctorInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\RegisterDoctorInfo\YQ\DoctorDes.cs" />
+    <Compile Include="Entity\RegisterDoctorInfo\YQ\request.cs" />
+    <Compile Include="Entity\RegisterDoctorInfo\YQ\response.cs" />
+    <Compile Include="Entity\RegisterDoctorInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\RegisterDoctorPartTimeInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\RegisterDoctorPartTimeInfo\YQ\request.cs" />
+    <Compile Include="Entity\RegisterDoctorPartTimeInfo\YQ\response.cs" />
+    <Compile Include="Entity\RegisterDoctorPartTimeInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\RegisterDoctorScheduleInfo\YQ\data_row.cs" />
+    <Compile Include="Entity\RegisterDoctorScheduleInfo\YQ\request.cs" />
+    <Compile Include="Entity\RegisterDoctorScheduleInfo\YQ\response.cs" />
+    <Compile Include="Entity\RegisterDoctorScheduleInfo\YQ\returnresult.cs" />
+    <Compile Include="Entity\RegisterLock\HIS\RequestReging.cs" />
+    <Compile Include="Entity\RegisterLock\HIS\ResultInfo.cs" />
+    <Compile Include="Entity\RegisterLock\YQ\request.cs" />
+    <Compile Include="Entity\RegisterLock\YQ\response.cs" />
+    <Compile Include="Entity\RegisterLock\YQ\returnresult.cs" />
+    <Compile Include="Entity\RegisterNumType\HIS\RegLvList.cs" />
+    <Compile Include="Entity\RegisterNumType\HIS\ReponseRegLv.cs" />
+    <Compile Include="Entity\RegisterNumType\YQ\data_row.cs" />
+    <Compile Include="Entity\RegisterNumType\YQ\response.cs" />
+    <Compile Include="Entity\RegisterNumType\YQ\returnresult.cs" />
+    <Compile Include="Entity\ReserveRegister\ReserveRegisterOrder.cs" />
+    <Compile Include="Entity\ReserveRegister\ReserveRegisterTicketOut.cs" />
+    <Compile Include="Entity\ReserveRegister\ReserverRegisterLock.cs" />
+    <Compile Include="Entity\SellCardInfo\HIS\ReponseCardNo.cs" />
+    <Compile Include="Entity\SellCardInfo\HIS\ReponsePrePay.cs" />
+    <Compile Include="Entity\SellCardInfo\HIS\RequestRegMark.cs" />
+    <Compile Include="Entity\SellCardInfo\YQ\data.cs" />
+    <Compile Include="Entity\SellCardInfo\YQ\request.cs" />
+    <Compile Include="Entity\SellCardInfo\YQ\response.cs" />
+    <Compile Include="Entity\SellCardInfo\YQ\returnresult.cs" />
+    <Compile Include="HisInterface\ProcessCompletedEventArgs.cs" />
+    <Compile Include="HisInterface\ProcessCompletedEventHandler.cs" />
+    <Compile Include="HisInterface\Service.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Servie\PTService.cs" />
+    <Compile Include="WebService.asmx.cs">
+      <DependentUpon>WebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61730</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44355/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
